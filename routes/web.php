@@ -1,6 +1,6 @@
 <?php
 
-Route::middleware(['web'])->group(function () {
+Route::group(['middleware'=> ['web'], 'prefix' => 'content'], function () {
 	Route::get('oauth2/{integration}/authorise', 'MacsiDigital\OAuth2\Http\Controllers\AuthorisationController@create')->name('oauth2.authorise');
 
 	// add American authorize route
